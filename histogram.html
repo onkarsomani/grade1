@@ -70,11 +70,14 @@
             
         </center>
         
-        <div class="container">
+        <div class="container" >
         
         
             <!-- <h1>Histogram</h1> -->
-            <canvas id="histogramCanvas" width="30%" height="12%"></canvas>
+            <center>
+
+                <canvas id="histogramCanvas" width="80%" height="30%"></canvas>
+            </center>
             <div id="positionDisplay" style="font-size: 18px; margin-top: 20px;color: aqua;"></div>
     
             <div class="slider-container" height = "150">
@@ -117,7 +120,7 @@
         </div>
         <center>
             <div class="headings" style="width:70%; padding-top: 0px;">
-              <h3>Student count per grade</h3>
+              <h3>Students count per grade</h3>
           </div>
 
 
@@ -154,7 +157,7 @@
               
             </table>
             <div class="headings" style="width:70%; padding-top: 0px;">
-                <h3>Grade cut-offs </h3>
+                <h3>Grade cut-off (marks) </h3>
             </div>
 
 
@@ -190,7 +193,7 @@
               </table>
 
 
-              <button class="button-4" role="button" onclick="window.print()" value="print a div!">GET PRINTOUT</button>
+              <button class="button-4" role="button" onclick="printDiv('histogramCanvas')" value="print a div!">GET PRINTOUT</button>
 
               
 
@@ -216,18 +219,18 @@
         //     w.print();
         //     w.close();
         // }
-        // function printDiv(canvasId) {
-        //     var canvas = document.getElementById(canvasId);
-        //     var printCanvas = document.createElement('canvas');
-        //     printCanvas.width = canvas.width;
-        //     printCanvas.height = canvas.height;
-        //     var printCtx = printCanvas.getContext('2d');
-        //     printCtx.drawImage(canvas, 0, 0);
-        //     var w = window.open();
-        //     w.document.write('<html><head><title>Print</title></head><body>');
-        //     w.document.write('<img src="' + printCanvas.toDataURL("image/png") + '" style="width:100%;">');
-        //     w.document.write('</body></html>');
-        // }
+        function printDiv(canvasId) {
+            var canvas = document.getElementById(canvasId);
+            var printCanvas = document.createElement('canvas');
+            printCanvas.width = canvas.width;
+            printCanvas.height = canvas.height;
+            var printCtx = printCanvas.getContext('2d');
+            printCtx.drawImage(canvas, 0, 0);
+            var w = window.open();
+            w.document.write('<html><head><title>Print</title></head><body>');
+            w.document.write('<img src="' + printCanvas.toDataURL("image/png") + '" style="width:100%;">');
+            w.document.write('</body></html>');
+        }
     </script>
     
     
